@@ -1,4 +1,4 @@
-# Student Performance Data Analysis System
+# Student Performance Analysis System
 
 A simple Python project to manage student records, analyze academic performance, and visualize results using the console and CSV files.
 
