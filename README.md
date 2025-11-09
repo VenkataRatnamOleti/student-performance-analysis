@@ -7,7 +7,6 @@ A simple Python project to manage student records, analyze academic performance,
 - Add, display, update, delete student records
 - Search students by ID
 - Calculate averages, top scores
-- Sort students by score, name, or age
 - Save/load records to/from CSV file
 - Visualize subject scores with bar charts
 - Modular code built with functions and classes
