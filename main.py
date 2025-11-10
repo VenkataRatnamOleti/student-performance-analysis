@@ -3,20 +3,27 @@ import file_ops
 import analytics
 import visualization
 import utils
-import os
+import analytics_pandas
+
 
 def menu():
-    print("-----Student Performance Data Analysis System-----")
+    print()
     print("--------------------------------------------------")
-    print("1. Add Student Record")
-    print("2. Display Student Records")
-    print("3. Update Student Record")
-    print("4. Delete Student Record")
-    print("5. Search Student")
-    print("6. Analyze Data")
-    print("7. Visualize Data")
-    print("8. Clear Screen")
-    print("9. Exit")
+    print("|      Student Performance Analysis System       |")
+    print("--------------------------------------------------")
+    print("|      1. Add Student Record                     |")
+    print("|      2. Display Student Records                |")
+    print("|      3. Update Student Record                  |")
+    print("|      4. Delete Student Record                  |")
+    print("|      5. Search Student                         |")
+    print("|      6. Analyze Data                           |")
+    print("|      7. Visualize Data                         |")
+    print("|      8. Clear Screen                           |")
+    print("|      9. Export all data to JSON                |")
+    print("|     10. Import all data to JSON                |")
+    print("|     11. Save Summary as Text                   |")
+    print("|     12. Advanced Pandas Analysis               |")
+    print("|     13. Exit                                   |")
     print("--------------------------------------------------")
 
 def main():
@@ -25,6 +32,9 @@ def main():
     while True:
         menu()
         choice = input("Enter choice: ")
+        utils.clear_console()
+        print("--------------------------------------------------")
+
 
         if choice == "1":
             student = Student.from_input()
@@ -57,14 +67,37 @@ def main():
             visualization.visualize(students)
 
         elif choice == "8":
-            os.system('cls')
+            utils.clear_console()
+            continue
 
         elif choice == "9":
+            file_ops.export_to_json(students)
+            print("Exported to JSON")
+
+        elif choice == "10":
+            students = file_ops.import_from_json()
+            print("Imported from JSON")
+
+        elif choice == "11":
+            file_ops.save_summary_to_text(students)
+            print("Summary written to text file.")
+
+        elif choice == "12":
+            df = analytics_pandas.load_students_to_df()
+            subject = input("Enter subject for stats: ")
+            stats = analytics_pandas.subject_statistics(df, subject)
+            print(stats)
+
+        elif choice == "13":
             break
 
         else:
-            print("Invalid option.")
+            print("!!! Invalid option.")
+
+        print("--------------------------------------------------")
+        print()
 
 
 if __name__ == "__main__":
     main()
+    utils.clear_console()

@@ -1,3 +1,11 @@
+import os
+
+def clear_console():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 def search_student(students, sid):
     for s in students:
         if s.student_id == sid:

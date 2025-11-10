@@ -18,3 +18,5 @@ def visualize(students):
         plt.xlabel("Student")
         plt.ylabel("Score")
         plt.show()
+
+    print("Visualization Completed.")

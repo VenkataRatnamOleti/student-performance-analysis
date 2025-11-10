@@ -1,1 +1,6 @@
 student_id,name,age,scores
+101,Amit,17,"{'Math': 89, 'English':76, 'Science': 94}"
+102,Riya,16,"{'Math': 78, 'English':85, 'Science': 80}"
+103,Sam,18,"{'Math': 92, 'English':67, 'Science': 70}"
+104,Isha,17,"{'Math': 84, 'English':90, 'Science': 88}"
+105,Arjun,16,"{'Math': 73, 'English':72, 'Science': 79}"
